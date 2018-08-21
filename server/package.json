@@ -43,6 +43,7 @@
     "starter project"
   ],
   "dependencies": {
+    "axios": "^0.18.0",
     "bcryptjs": "2.4.3",
     "body-parser": "^1.17.0",
     "compression": "^1.6.2",
