@@ -1,11 +1,27 @@
- const services = require('../services/bookmark')
-
+const services = require('../services/bookmark')
 
 /**
- * bookmark list
- * Returns existing boookmarks
- * @public
+ * @api {get} /bookmark/:id Request all bookmarked repositories
+ * @apiName getAllBookmarks
+ * @apiGroup Bookmark
+ * @apiVersion 0.1.0
+ *
+ * @apiParam {Number} id Repository unique ID.
+ *
+ * @apiSuccess {Array} list List of bookmark.
+ * @apiSuccess {Number} count  Total number of bookmarked items.
+ *
+ * @apiSuccessExample Success-Response:
+ *     
+ *     {
+ *       "count": 1,
+ *       "list": [{}]
+ *     }
+ *
+ *
  */
+
+
 exports.getAllBookmarks = async (req, res, next) => {
   try { 
 
@@ -19,10 +35,28 @@ exports.getAllBookmarks = async (req, res, next) => {
 
 
 /**
- * Add to bookmark list
- * Returns existing boookmarks
- * @public
+ * @api {post} /bookmark Add repository to the bookmark list
+ * @apiName addBookmark
+ * @apiGroup Bookmark
+ * @apiVersion 0.1.0
+ *
+ * @apiParam {Number} id Repository unique ID.
+ *
+ * @apiSuccess {Array} list List of bookmark.
+ * @apiSuccess {Number} count  Total number of bookmarked items.
+ *
+ * @apiSuccessExample Success-Response:
+ *     
+ *     {
+ *       "count": 1,
+ *       "list": [{}]
+ *     }
+ *
+ *
  */
+
+
+
 exports.addBookmark = async (req, res, next) => {
   try { 
     console.log(req);
@@ -35,11 +69,31 @@ exports.addBookmark = async (req, res, next) => {
 };
 
 
+
 /**
- * Removes to bookmark list
- * Returns existing boookmarks
- * @public
+ * @api {delete} /bookmark/:id Remove the bookmarked item from the list 
+ * @apiName removeBookmark
+ * @apiGroup Bookmark
+ * @apiVersion 0.1.0
+ *
+ *
+ * @apiParam {Number} id Repository unique ID.
+ *
+ * @apiSuccess {Array} list List of bookmark.
+ * @apiSuccess {Number} count  Total number of bookmarked items.
+ *
+ * @apiSuccessExample Success-Response:
+ *     
+ *     {
+ *       "count": 1,
+ *       "list": [{}]
+ *     }
+ *
+ *
  */
+
+
+
 exports.removeBookmark = async (req, res, next) => {
   try { 
 

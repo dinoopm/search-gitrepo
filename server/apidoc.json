@@ -1,0 +1,7 @@
+{
+  "name": "GitHub Repository Hacker",
+  "version": "0.1.0",
+  "description": "This nodejs application will search and retrieve repositories from gihub.",
+  "title": "github Repository hacker",
+  "url" : "localhost:3000"
+}

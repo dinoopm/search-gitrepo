@@ -44,7 +44,6 @@
   ],
   "dependencies": {
     "axios": "^0.18.0",
-    "bcryptjs": "2.4.3",
     "body-parser": "^1.17.0",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
@@ -62,7 +61,7 @@
     "pm2": "^3.0.0"
   },
   "devDependencies": {
-    "apidoc": "^0.17.5",
+    "apidoc": "^0.17.6",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.0",

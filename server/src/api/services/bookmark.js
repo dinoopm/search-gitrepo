@@ -5,13 +5,19 @@ let bookmark = {};
 
 
 exports.getAllBookmarks = async () => {
-	return {"bookmarks":Object.values(bookmark)};
+      return {
+            "count":Object.values(bookmark).length,
+            "list":Object.values(bookmark)
+      }
 }
 
 exports.addBookmark = async (id) => {
 
   if(bookmark[id]){
-  	 return {"bookmarks":Object.values(bookmark)};
+  	  return {
+            "count":Object.values(bookmark).length,
+            "list":Object.values(bookmark)
+      }
   }	
   
   const url = `https://api.github.com/repositories/${id}`;
@@ -20,7 +26,10 @@ exports.addBookmark = async (id) => {
 
   bookmark[response.data.id] = response.data;
 
-  return {"bookmarks":Object.values(bookmark)};
+  return {
+        "count":Object.values(bookmark).length,
+        "list":Object.values(bookmark)
+  }
 
 };
 
@@ -29,7 +38,10 @@ exports.removeBookmark = async (id) => {
   
   delete bookmark[id];
 
-  return {"bookmarks":Object.values(bookmark)};;
+  return {
+        "count":Object.values(bookmark).length,
+        "list":Object.values(bookmark)
+  }
 };
 
 
