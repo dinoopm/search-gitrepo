@@ -12,6 +12,11 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractPlugin = new ExtractTextPlugin({
+  filename: 'main.css'
+});
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -188,6 +193,11 @@ module.exports = {
               },
             ],
           },
+          {
+              test: /\.scss/,
+              loader: 'style-loader!css-loader!sass-loader'
+          },
+          
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
