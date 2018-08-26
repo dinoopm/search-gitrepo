@@ -1,18 +1,16 @@
 import axios from "axios";
 
-
+const server_url ="http://localhost:7000"
 
 // Send a GET request
-export  function getData(url=''){
-	return axios.get(url)
-}
+export  const getData = (url='') => axios.get(server_url+url)
 
 
 // Send a POST request
-export  function postData(url = ``, data = {}) {   
+export  const postData = (url = ``, data = {}) => {   
     return axios({
             method: 'post',
-            url: url,
+            url: server_url+url,
             data: data,
             headers: { 
               'Content-Type': 'application/json',
@@ -22,10 +20,10 @@ export  function postData(url = ``, data = {}) {
 }      
 
 // Send a DELETE request
-export  function deleteData(url = ``, data = {}) {   
+export  const deleteData = (url = ``, data = {}) => {   
     return axios({
             method: 'delete',
-            url: url,
+            url: server_url+url,
             data: data,
             headers: { 
               'Content-Type': 'application/json',
