@@ -8,14 +8,11 @@ body {
     font-family: sans-serif;
     background: #f5f5f5;
     line-height: 24px;
-
 }
-
 a{
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
-
 h1{
   text-align: center;
   font-size: 30px;
@@ -39,7 +36,6 @@ input{
     padding: 10px 40px;
     border: none;
 }
-
 form.search-form{
   width: 383px;
   margin: 20px auto;
@@ -52,18 +48,15 @@ form.search-form{
   }
 
 }
-
 header#site-header{
   background: #2a2a2a;
   color: #fff;
   padding: 5px;
   text-align: left;
 }
-
 main#main-content{
   min-height: 100px;
 }
-
 footer#site-footer{
   text-align: center;
   color: #000;
@@ -71,7 +64,6 @@ footer#site-footer{
   padding: 10px 0 0;
   clear: both;
 }
-
 .search-results{
   padding: 10px;
 }
@@ -82,18 +74,19 @@ footer#site-footer{
 
     .tile{
       font-size: 13px;
-    border: 1px solid #ccc;
+      border: 1px solid #ccc;
       width: 240px;
       padding: 10px;
       margin: 10px;
-
+      text-align: center;
+      button{
+        margin: 5px 0;
+      }
   }
   .tile label{
     font-weight: bold;
   }
 }
-
-
 .loader {
   position: absolute;
   margin: auto;
@@ -126,10 +119,10 @@ footer#site-footer{
 
 @media only screen and (min-width: 768px) {
     body {
-       h1{
-      text-align: center;
-      font-size: 70px;
-      font-weight: unset;
-    }
+      h1{
+          text-align: center;
+          font-size: 70px;
+          font-weight: unset;
+      }
     }
 }

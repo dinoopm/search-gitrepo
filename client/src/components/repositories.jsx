@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import List from "../components/list";
+import Loader from "../components/loader";
 
 export default class Repositories extends PureComponent {
   state = { query: "", fetched: false };
@@ -11,15 +12,13 @@ export default class Repositories extends PureComponent {
     const query = props.location.search.slice(1);
 
     if (query !== state.query) {
-      return { query, fetched: false};
+      return { query, fetched: false };
     }
-    return null;
+    return { query, fetched: true };
   }
-  
 
   componentDidMount() {
     this.fetchRepositories();
-
   }
 
   componentDidUpdate() {
@@ -27,15 +26,24 @@ export default class Repositories extends PureComponent {
   }
 
   fetchRepositories() {
-
     const {
       location: { search },
-      searchRepositories
+      searchRepositories,
+      setLoader
     } = this.props;
-    search &&
-      searchRepositories(search.slice(1)).then(() => {
+    search && setLoader(true);
+    searchRepositories(search.slice(1))
+      .then(() => {
         this.setState({ fetched: true });
-      });
+      })
+      .then(() => setLoader(false));
+  }
+
+  onAddBookmarks = (id) => {
+    const { addToBookmark, setLoader } = this.props;
+    setLoader(true);
+    addToBookmark(id).then(() => setLoader(false))
+
   }
 
   render() {
@@ -43,7 +51,11 @@ export default class Repositories extends PureComponent {
       <div>
         <Header />
         <main id="main-content">
-          <List repositories={this.props.repositories} addToBookmark={this.props.addToBookmark}/>
+          <List
+            repositories={this.props.repositories}
+            addToBookmark={this.onAddBookmarks}
+          />
+          <Loader loader={this.props.loader} />
         </main>
         <Footer />
       </div>

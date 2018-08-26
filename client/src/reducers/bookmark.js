@@ -7,10 +7,7 @@ export default (state = initialState, action) => {
     case "GET_BOOKMARKS":
       state = {bookmarks:action.payload};
       break;
-    case "REMOVE_BOOKMARK":
-      state = {bookmarks:action.payload};
-      break;      
-
+      
     default:
       break;
   }

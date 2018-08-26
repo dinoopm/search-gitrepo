@@ -17,5 +17,5 @@ export const getBookmarks = () => dispatch =>
 export const removeBookmark = id => dispatch =>
   	deleteData(`http://localhost:7000/bookmark/${id}`)
     .then(res => {
-    	dispatch({ type: "REMOVE_BOOKMARKS", payload: res.data })
+    	dispatch({ type: "GET_BOOKMARKS", payload: res.data })
     }).then(()=>{ console.log("Bookmark Removed")});

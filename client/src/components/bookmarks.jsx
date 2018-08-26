@@ -6,7 +6,11 @@ import List from "../components/list";
 export default class Bookmarks extends PureComponent {
   page = "bookmarks";
   componentDidMount() {
-    this.props.getBookmarks();
+    
+    const {getBookmarks } = this.props;
+
+    getBookmarks()
+        
   }
 
   render() {

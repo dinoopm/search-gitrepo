@@ -1,15 +1,14 @@
 import React from "react";
 import Img from "react-image";
-import { Link } from "react-router-dom";
 
 export default ({ repositories, addToBookmark, removeBookmark , page }) => {
 
   const button = (id)=>{
       if(page == "bookmarks"){
-         return <button onClick={e=>removeBookmark(`${id}`)}>Remove bookmark</button>
+         return <button onClick={e=>removeBookmark(id)}>Remove bookmark</button>
       }
       else{
-         return <button onClick={e=>addToBookmark(`${id}`)}>Add to bookmark</button>
+         return <button onClick={e=>addToBookmark(id)}>Add to bookmark</button>
       }
 
   }
