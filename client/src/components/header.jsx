@@ -8,7 +8,7 @@ export default () => (
     <h1>Github Repositories Hacker</h1>
     <Search />
     <nav>
-    	<Link to={`/bookmarks`} >Bookmarks</Link>
+    	<Link to={`/`} >Home</Link> | <Link to={`/bookmarks`} >Bookmarks</Link>
     </nav>
     
   </header>

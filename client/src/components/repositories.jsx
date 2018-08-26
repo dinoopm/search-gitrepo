@@ -18,7 +18,7 @@ export default class Repositories extends PureComponent {
   }
 
   componentDidMount() {
-    this.fetchRepositories();
+    this.props.location.search && this.fetchRepositories();
   }
 
   componentDidUpdate() {
