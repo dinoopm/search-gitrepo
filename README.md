@@ -37,14 +37,16 @@ yarn start
 Install dependencies 
 
 ```sh
-cs client
+cd client
 
 yarn
 
+```
+
 or
 
+```sh
 npm install
-
 
 ```
 
