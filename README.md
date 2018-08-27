@@ -30,6 +30,14 @@ yarn start
 
 ```
 
+To see the API docs
+
+```sh
+
+yarn docs 
+
+```
+
 
 **How to start the client** 
 
