@@ -43,13 +43,6 @@ yarn
 
 ```
 
-or
-
-```sh
-npm install
-
-```
-
 To start the react client app.
 
 ```sh
