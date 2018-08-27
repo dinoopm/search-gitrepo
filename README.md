@@ -3,10 +3,8 @@
 
 **How to start the Server** 
 
-cd server
 
-
-Install dependencies 
+To Install dependencies 
 
 ```sh
 
